@@ -8,10 +8,10 @@ const db = getFirestore(appFirebase)
 export default function CreateProduct(props) {
 
   const initialState = {
-    nombre: '',
-    color: '',
+    Producto: '',
+    Tipo: '',
     Precio: '',
-    stock: ''
+    Stock: ''
   }
 
   const [state, setState] = useState(initialState)
@@ -42,17 +42,17 @@ export default function CreateProduct(props) {
         <TextInput
           style={styles.input}
           placeholder='Nombre del Producto'
-          value={state.nombre}
-          onChangeText={(value) => handleChangeText(value, 'nombre')}
+          value={state.Producto}
+          onChangeText={(value) => handleChangeText(value, 'Producto')}
         />
       </View>
 
       <View style={styles.inputGroup}>
         <TextInput
           style={styles.input}
-          placeholder='Color'
-          value={state.color}
-          onChangeText={(value) => handleChangeText(value, 'color')}
+          placeholder='Tipo'
+          value={state.Tipo}
+          onChangeText={(value) => handleChangeText(value, 'Tipo')}
         />
       </View>
 

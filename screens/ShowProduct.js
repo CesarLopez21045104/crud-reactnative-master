@@ -9,8 +9,8 @@ const db = getFirestore(appFirebase)
 export default function ShowProduct(props) {
 
   const [product, setProduct] = useState({
-    nombre: '',
-    color: '',
+    Producto: '',
+    Tipo: '',
     Precio: '',
   })
   const [editable, setEditable] = useState(false)
@@ -62,22 +62,22 @@ export default function ShowProduct(props) {
 
   return (
     <ScrollView style={styles.container}>
-      <Text style={styles.titulo}>Detalle del Producto</Text>
+      <Text style={styles.Producto}>Detalle del Producto</Text>
 
       <View style={styles.productDetails}>
-        <Text style={styles.sub}>Nombre:</Text>
+        <Text style={styles.sub}>Producto:</Text>
         <TextInput
           style={styles.productInput}
-          value={product.nombre}
-          onChangeText={(text) => editProduct('nombre', text)}
+          value={product.Producto}
+          onChangeText={(text) => editProduct('Producto', text)}
           editable={editable}
         />
 
-        <Text style={styles.sub}>Color:</Text>
+        <Text style={styles.sub}>Tipo:</Text>
         <TextInput
           style={styles.productInput}
-          value={product.color}
-          onChangeText={(text) => editProduct('color', text)}
+          value={product.Tipo}
+          onChangeText={(text) => editProduct('Tipo', text)}
           editable={editable}
         />
 
@@ -89,6 +89,16 @@ export default function ShowProduct(props) {
           editable={editable}
           keyboardType="numeric"
         />
+
+        <Text style={styles.sub}>Stock:</Text>
+        <TextInput
+          style={styles.productInput}
+          value={product.Stock}
+          onChangeText={(text) => editProduct('Stock', text)}
+          editable={editable}
+        />
+
+
       </View>
 
       <View style={styles.buttonsContainer}>

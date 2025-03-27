@@ -15,13 +15,13 @@ const ListProducts = (props) => {
         const querySnapshot = await getDocs(collection(db, 'productos'))
         const docs = []
         querySnapshot.forEach((doc) => {
-          const { nombre, color, Precio,stock } = doc.data()
+          const { Producto, Tipo, Precio,Stock } = doc.data()
           docs.push({
             id: doc.id,
-            nombre,
-            color,
+            Producto,
+            Tipo,
             Precio,
-            stock,
+            Stock,
           })
         })
         setLista(docs);
@@ -46,7 +46,7 @@ const ListProducts = (props) => {
           lista.map((list) => (
             <TouchableOpacity key={list.id} style={styles.botonLista}
               onPress={() => props.navigation.navigate('Show', { productoId: list.id })}>
-              <Text style={styles.textoNombre}>{list.nombre}</Text>
+              <Text style={styles.textoProducto}>{list.Producto}</Text>
               <Text style={styles.textoStock}>Stock: {list.Stock}</Text>
             </TouchableOpacity>
           ))
