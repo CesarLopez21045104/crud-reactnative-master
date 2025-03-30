@@ -180,7 +180,7 @@ const styles = StyleSheet.create({
     marginBottom: 15,
     fontSize: 14,
     fontWeight: "500",
-    textAlign: "center",
+    textAlign: "center"
   },
   button: {
     backgroundColor: "#4CAF50",
@@ -199,6 +199,9 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: "#007BFF",
   },
+  erroes: {
+    color: red
+  }
 });
 
 export default App;
